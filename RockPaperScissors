@@ -1,0 +1,54 @@
+import random
+
+class RockPaperScissors:
+    
+    userChoice = input( 'Enter "rock", "paper" or "scissors" or "0" to quit ')
+    userWins = 0
+    computerWins = 0
+    
+    while userChoice!= 0:
+
+        if userChoice == 'rock':
+            user = 1
+            checkWin(user)
+        elif userChoice == 'paper':
+            user = 2
+            checkWin(user)
+        elif userChoice == 'scissors':
+            user = 3
+            checkWin(user)
+        else:
+            userChoice = input('Invalid - Enter "rock", "paper" or "scissors"')
+    
+    print('User wins: ', ' Computer Wins', userWins, computerWins)
+    
+    def checkWin(user):
+        rand = random.randint(0,2)
+        if rand == user:
+            print('Tie')
+        elif rand == 1:
+            if user == 2:
+                print('User wins')
+                userWins = userWins + 1
+            else:
+                print('Computer wins')
+                computerWins = computerWins + 1
+        elif rand == 2:
+            if user == 1:
+                print('Computer wins')
+                computerWins = computerWins + 1
+            else:
+                print('User wins')
+                userWins = computerWins + 1
+        elif rand == 3:
+            if user == 1:
+                print('Computer wins')
+                computerWins = computerWins + 1
+            else:
+                print('User wins')
+                userWins = userWins + 1
+    print('User:', userWins, ' Computer:', computerWins)
+                
+            
+             
+            
